@@ -20,10 +20,15 @@ public class AutovermietungSystem {
         kunden.add(kunde);
     }
 
-    public void zeigeAutos() {
+    public void zeigeAutos(boolean nurVerfuegbar) {
         for (int i = 0; i < autos.size(); i++) {
             Auto a = autos.get(i);
-            if (a.istVerfuegbar()) {
+
+            if (nurVerfuegbar) {
+                if (a.istVerfuegbar()) {
+                    System.out.println(i + ": " + a);
+                }
+            } else {
                 System.out.println(i + ": " + a);
             }
         }
